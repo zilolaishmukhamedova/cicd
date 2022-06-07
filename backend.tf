@@ -3,5 +3,4 @@ terraform {
       hostname = "app.terraform.io"
       organization = "Zilola"
   }
-
 }
