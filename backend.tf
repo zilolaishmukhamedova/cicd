@@ -1,6 +1,5 @@
 terraform {
-  backend = "remote" {
+  backend = "remote" 
       hostname = "app.terraform.io"
       organization = "Zilola"
   }
-}
