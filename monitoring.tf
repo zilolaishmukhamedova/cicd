@@ -31,7 +31,7 @@ resource "aws_cloudwatch_event_rule" "console" {
 "source": ["aws.ec2"],
 "detail-type": [EC2 instance State-change Notifications"],
 "detail": {
-    "state": ["pending", 'running". "terminated"]
+    "state": ["pending", "running", "terminated"]
 }
 }
 PATTERN 
