@@ -8,7 +8,7 @@ resource "aws_iam_user" "user2" {
 resource "aws_iam_user" "user3" {
   name = "Jenkins"
 }
-resource "aws_iam_user" "user3" {
+resource "aws_iam_user" "user4" {
   name = "Ahrorbek"
 }
 resource "aws_iam_group" "group1" {
