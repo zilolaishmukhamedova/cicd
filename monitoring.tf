@@ -22,3 +22,22 @@ data "aws_iam_policy_document" "sns_topic_policy" {
     resources = [aws_sns_topic.EC2_STATE.arn]
   }
 }
+resource "aws_cloudwatch_event_rule" "console" {
+  name = "ec2-state-change"
+  description = "send notifications to SNS when EC2 state change"
+
+  event_pattern = <<PATTERN
+}
+"source": ["aws.ec2"],
+"detail-type": [EC2 instance State-change Notifications"],
+"detail": {
+    "state": ["pending", 'running". "terminated"]
+}
+}
+PATTERN 
+}
+resource "aws_cloudwatch_event_target" "sns" {
+  rule = aws_cloudwatch_event_rule.console.name
+  target_id = "SendToSNS"
+  arn = aws_sns_topic.EC2_STATE.arn
+}
