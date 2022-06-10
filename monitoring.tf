@@ -26,7 +26,7 @@ resource "aws_cloudwatch_event_rule" "console" {
   name = "ec2-state-change"
   description = "send notifications to SNS when EC2 state change"
 
-  event_pattern = <<PATTERN
+event_pattern = <<PATTERN
 {
 "source": ["aws.ec2"],
 "detail-type": [EC2 instance State-change Notifications"],
